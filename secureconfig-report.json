@@ -1,0 +1,66 @@
+{
+  "tool": "SecureConfig",
+  "generated_at_utc": "2026-10-24T17:18:47.991670+00:00",
+  "scope": "Local host only; loopback TCP checks use 127.0.0.1",
+  "platform": {
+    "system": "Windows",
+    "release": "11",
+    "python_version": "3.14.3"
+  },
+  "checks": {
+    "firewall": {
+      "status": "enabled",
+      "evidence": "Windows firewall reports one or more profiles On"
+    },
+    "loopback_ports": [
+      {
+        "port": 21,
+        "service_hint": "FTP",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 22,
+        "service_hint": "SSH",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 23,
+        "service_hint": "Telnet",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 3306,
+        "service_hint": "MySQL",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 5432,
+        "service_hint": "PostgreSQL",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 6379,
+        "service_hint": "Redis",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      },
+      {
+        "port": 8080,
+        "service_hint": "Alternate HTTP / development server",
+        "status": "not_detected",
+        "note": "No TCP listener detected on loopback"
+      }
+    ]
+  },
+  "limitations": [
+    "This is a small learning tool, not a full security scanner.",
+    "Only a short list of TCP ports on 127.0.0.1 is checked.",
+    "Firewall parsing and availability vary by operating system.",
+    "A result of unknown means the check could not verify the state."
+  ]
+}
